@@ -1,0 +1,39 @@
+#!/usr/bin/python3
+
+import sys
+
+
+command_table = {
+    'detailed list': 'ls -la',
+    'list': 'ls',
+    'status': 'git status',
+    'initialize': 'git init',
+    'directory': 'cd WORD',
+    'bovine': 'cowsay moo',
+    'commit': 'git commit -m WORD',
+    'git': 'git WORD',
+}
+
+arg_delimiters = [
+    'called',
+    'named',
+]
+
+def main():
+    data = ' '.join(sys.argv[1:])
+    for k, v in command_table.items():
+        if k in data:
+            if 'WORD' in v:
+                s = data.split(' ')
+                for d in arg_delimiters:
+                    if d in data:
+                        arg = data.split(d)[1]
+                        print(v.replace('WORD', arg))
+                        break
+            else:
+                print(v)
+            break
+
+
+if __name__ == '__main__':
+    main()
