@@ -8,9 +8,9 @@ command_table = {
     'list': 'ls',
     'status': 'git status',
     'initialize': 'git init',
-    'directory': 'cd WORD',
     'bovine': 'cowsay moo',
     'commit': 'git commit -m WORD',
+    'directory': 'cd WORD',
     'git': 'git WORD',
 }
 
